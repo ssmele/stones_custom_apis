@@ -10,6 +10,9 @@ api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///static/db/test.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
+@app.route('/')
+def home():
+    return "swag"
 
 db = SQLAlchemy(app)
 
