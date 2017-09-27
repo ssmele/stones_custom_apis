@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import render_template
 from flask_restful import Api
 from controllers import helloController
 from flask_sqlalchemy import SQLAlchemy
@@ -12,7 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 @app.route('/')
 def home():
-    return "swag"
+    return render_template('index.html')
 
 db = SQLAlchemy(app)
 
